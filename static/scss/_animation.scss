@@ -10,25 +10,25 @@
   }
 }
 
-@media only screen and (max-width: 300px) {
-  @keyframes bgMotionAnimation {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-330px);
-    }
-  }
-}
-
 @keyframes slideUp {
   0% {
-    transform: translateY(20px);
+    transform: translate(0, 20px);
   }
 
   100% {
-    transform: translateY(0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes hideContent {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -30%);
+    opacity: 0;
   }
 }
 

@@ -7,19 +7,20 @@
   left: 0;
 }
 
-@mixin flexCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @mixin animationToProfile($len) {
   @for $i from 1 through $len {
-    .profiles > li:nth-child(#{$i}n) {
+    &:nth-child(#{$i}n) {
       animation: fadeIn 0.5s ease-out #{2.2 + (0.3 * $i)}s backwards,
         slideUp 0.5s ease-out #{2.2 + (0.3 * $i)}s backwards;
     }
   }
+}
+
+@mixin absoluteCentering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 // @mixin pc-wide {
