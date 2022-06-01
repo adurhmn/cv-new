@@ -1,0 +1,119 @@
+@use "reset";
+@use "animation";
+@use "var";
+@use "mixin" as m;
+
+.bg {
+  @include m.fixToScreen;
+  background: #348cb2 url(./images/bg.jpg) bottom left repeat-x;
+  height: 100%;
+  width: 200vw;
+  background-size: 100vw auto;
+  animation: bgMotionAnimation 50s linear infinite, fadeIn 1.5s ease-in;
+
+  @media only screen and (max-width: 300px) {
+    width: 660px;
+    background-size: 330px;
+  }
+}
+
+.overlay {
+  @include m.fixToScreen;
+  width: 100%;
+  height: 100%;
+  background: url(./images/overlay-pattern.png), url(./images/overlay.svg);
+  background-size: auto, cover;
+  background-position: top left, center center;
+  animation: fadeIn 1.5s 1.5s backwards;
+}
+
+.main {
+  @include m.fixToScreen;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  @include m.flexCenter;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 900;
+  letter-spacing: -0.25rem;
+  margin-bottom: 1.5rem;
+  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.info {
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.7);
+  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
+  font-size: 2.2rem;
+  line-height: 1.6;
+}
+
+.profiles {
+  > li {
+    display: inline-block;
+    margin: 1rem;
+  }
+}
+
+.profile {
+  border: 1px solid var.$primary-white;
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
+  height: 7.5rem;
+  width: 7.5rem;
+  font-size: 3rem;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(3px) scale(1.1);
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@include m.animationToProfile(5);
+
+// Media Queries
+@include m.pc {
+  html {
+    font-size: 52%;
+  }
+}
+
+@include m.tab {
+  html {
+    font-size: 45%;
+  }
+}
+
+@include m.mobile {
+  .name {
+    font-size: 5rem;
+  }
+
+  .info {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+  }
+}

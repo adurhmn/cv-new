@@ -1,0 +1,12 @@
+$breakpoints: (
+  pc: 1300px,
+  tab: 800px,
+  mobile: 500px,
+);
+
+$primary-white: rgba(255, 255, 255, 0.8);
+
+$animation-timing: (
+  bg-animation: 1.5s,
+  overlay-animation: 1.5s,
+);
