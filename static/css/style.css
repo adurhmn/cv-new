@@ -30,7 +30,7 @@ a {
 }
 @media only screen and (max-width: 800px) {
   html {
-    font-size: 48%;
+    font-size: 50%;
   }
 }
 @keyframes bgMotionAnimation {
@@ -98,58 +98,6 @@ a {
   height: 100%;
 }
 
-.profile-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 45%;
-  width: 90%;
-  text-align: center;
-}
-
-.name {
-  font-weight: 900;
-  letter-spacing: -0.25rem;
-  margin-bottom: 1.5rem;
-  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.info {
-  font-weight: 300;
-  letter-spacing: -0.4px;
-  margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.7);
-  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
-  font-size: 2.2rem;
-  line-height: 1.6;
-}
-
-.profiles > li {
-  display: inline-block;
-  margin: 1rem;
-}
-.profiles > li:nth-child(1n) {
-  animation: fadeIn 0.5s ease-out 2.5s backwards, slideUp 0.5s ease-out 2.5s backwards;
-}
-.profiles > li:nth-child(2n) {
-  animation: fadeIn 0.5s ease-out 2.8s backwards, slideUp 0.5s ease-out 2.8s backwards;
-}
-.profiles > li:nth-child(3n) {
-  animation: fadeIn 0.5s ease-out 3.1s backwards, slideUp 0.5s ease-out 3.1s backwards;
-}
-.profiles > li:nth-child(4n) {
-  animation: fadeIn 0.5s ease-out 3.4s backwards, slideUp 0.5s ease-out 3.4s backwards;
-}
-.profiles > li:nth-child(5n) {
-  animation: fadeIn 0.5s ease-out 3.7s backwards, slideUp 0.5s ease-out 3.7s backwards;
-}
-.profiles > li:nth-child(6n) {
-  animation: fadeIn 0.5s ease-out 4s backwards, slideUp 0.5s ease-out 4s backwards;
-}
-
 .profile {
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
@@ -158,31 +106,78 @@ a {
   height: 7.5rem;
   width: 7.5rem;
   font-size: 3rem;
+  cursor: pointer;
 }
 .profile:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(3px) scale(1.1);
 }
-
-.icon {
+.profile-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 90%;
+  text-align: center;
+  margin-top: -15px;
+}
+.profile-name {
+  font-weight: 900;
+  letter-spacing: -0.3rem;
+  margin-bottom: 1.5rem;
+  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
+  font-size: 8rem;
+  line-height: 1;
+}
+.profile-info {
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  animation: slideUp 0.7s 2.2s backwards, fadeIn 0.7s 2.2s backwards;
+  font-size: 2.2rem;
+  line-height: 1.6;
+}
+.profile-box > li {
+  display: inline-block;
+  margin: 1rem;
+}
+.profile-box > li:nth-child(1n) {
+  animation: fadeIn 0.5s ease-out 2.5s backwards, slideUp 0.5s ease-out 2.5s backwards;
+}
+.profile-box > li:nth-child(2n) {
+  animation: fadeIn 0.5s ease-out 2.8s backwards, slideUp 0.5s ease-out 2.8s backwards;
+}
+.profile-box > li:nth-child(3n) {
+  animation: fadeIn 0.5s ease-out 3.1s backwards, slideUp 0.5s ease-out 3.1s backwards;
+}
+.profile-box > li:nth-child(4n) {
+  animation: fadeIn 0.5s ease-out 3.4s backwards, slideUp 0.5s ease-out 3.4s backwards;
+}
+.profile-box > li:nth-child(5n) {
+  animation: fadeIn 0.5s ease-out 3.7s backwards, slideUp 0.5s ease-out 3.7s backwards;
+}
+.profile-box > li:nth-child(6n) {
+  animation: fadeIn 0.5s ease-out 4s backwards, slideUp 0.5s ease-out 4s backwards;
+}
+.profile-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.fadeOutElement {
-  animation: hideContent 0.7s forwards;
+.project {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: 2rem;
+  min-width: 80%;
+  max-width: 80%;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "title title" "info info" "code live";
 }
-
-.fadeInElement {
-  animation: hideContent 0.7s ease-in 0.7s both reverse;
-}
-
-.hideElement {
-  visibility: hidden;
-}
-
 .project-content {
   position: absolute;
   top: 50%;
@@ -192,52 +187,42 @@ a {
   height: 90%;
   text-align: center;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.projects {
-  max-height: 75%;
+.project-heading {
+  font-weight: 900;
+  font-size: 5rem;
+}
+.project-box {
+  max-height: 80%;
   overflow-y: scroll;
   border: solid rgba(255, 255, 255, 0.2);
   border-width: 1px 0 1px 0;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
-.projects::-webkit-scrollbar {
+.project-box::-webkit-scrollbar {
   width: 0 !important;
 }
-
-.project-heading {
-  font-weight: 900;
-  margin-bottom: 2rem;
-  font-size: 5rem;
-}
-
-.project {
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  margin: 2rem;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "title title" "info info" "code live";
-}
-
 .project-title {
   padding: 2rem 2rem 0.5rem 2rem;
-  font-weight: 700;
-  font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 2rem;
   grid-area: title;
 }
-
 .project-info {
   font-size: 1.5rem;
   padding: 0 2rem 2rem 2rem;
   grid-area: info;
 }
-
 .project-link {
   padding: 2rem;
   font-size: 2rem;
   border: solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
 .project-link:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -252,23 +237,37 @@ a {
   border-width: 1px 0 0 0;
   border-bottom-right-radius: 20px;
 }
-
-.backToHome {
-  font-size: 2rem;
+.project-btn {
+  font-size: 1.6rem;
   padding: 1rem;
-  margin-top: 3rem;
   display: inline-block;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 5px;
-  font-weight: 900;
+  font-weight: 700;
+  cursor: pointer;
+}
+.project-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.fadeOutElement {
+  animation: hideContent 0.7s forwards;
+}
+
+.fadeInElement {
+  animation: hideContent 0.7s ease-in 0.7s both reverse;
+}
+
+.hideElement {
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 500px) {
-  .name {
-    font-size: 4.6rem;
+  .profile-name {
+    font-size: 4.2rem;
+    letter-spacing: -1px;
   }
-
-  .info {
+  .profile-info {
     font-size: 1.7rem;
     letter-spacing: 0;
   }

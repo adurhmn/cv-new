@@ -1,5 +1,5 @@
-const projectBtn = document.getElementById("projects");
-const homeBtn = document.querySelector(".backToHome");
+const projectBtn = document.getElementById("to-project");
+const homeBtn = document.getElementById("to-home");
 const profileContent = document.querySelector(".profile-content");
 const projectContent = document.querySelector(".project-content");
 const fadeOutClass = "fadeOutElement";
