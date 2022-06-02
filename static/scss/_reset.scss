@@ -1,12 +1,12 @@
 @use "mixin" as m;
 
 html {
-  // font-size: 62.5%; //for development
+  font-size: 62.5%; //for development
   box-sizing: border-box;
   color: white;
   font-family: "Source Sans Pro", sans-serif;
 
-  font-size: 70%; //for deployment
+  // font-size: 68%; //for deployment
 }
 
 *,
