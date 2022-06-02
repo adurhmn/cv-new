@@ -172,8 +172,6 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   margin: 2rem;
-  min-width: 80%;
-  max-width: 80%;
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "title title" "info info" "code live";
@@ -199,7 +197,7 @@ a {
 .project-box {
   max-height: 80%;
   overflow-y: scroll;
-  border: solid rgba(255, 255, 255, 0.2);
+  border: solid rgba(255, 255, 255, 0.8);
   border-width: 1px 0 1px 0;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
@@ -209,14 +207,15 @@ a {
 }
 .project-title {
   padding: 2rem 2rem 0.5rem 2rem;
-  font-weight: 600;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 2.2rem;
   grid-area: title;
 }
 .project-info {
   font-size: 1.5rem;
   padding: 0 2rem 2rem 2rem;
   grid-area: info;
+  font-weight: 600;
 }
 .project-link {
   padding: 2rem;
